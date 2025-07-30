@@ -36,4 +36,5 @@ jobs:
 
     - name: sync build artifacts
       run: aws s3 cp "s3://$AWS_S3_BUCKET/artifacts/" gh-actions
-
+      env:
+        AWS_S3_BUCKET: ${{ vars.AWS_S3_BUCKET }}
