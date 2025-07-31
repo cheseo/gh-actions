@@ -1,14 +1,17 @@
 pipeline {
-	agent { dockerfile true }
 	stages {
 		stage('build'){
+		agent { dockerfile true }
 			steps {
 				sh 'go build'
 			}
-		}
-		stage('test'){
 			steps {
 			      sh 'go test'
+			}
+		}
+		stage('deploy'){
+			steps {
+			      sh 'sudo -Hu ubuntu sh -c "cd; cd gh-actions; ./update"'
 			}
 		}
 	}
