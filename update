@@ -1,0 +1,6 @@
+#!/bin/bash
+pkill -9 gh-actions
+git pull --rebase
+go build
+nohup ./gh-actions &
+
