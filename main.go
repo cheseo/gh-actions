@@ -16,6 +16,7 @@ func handler(w http.ResponseWriter, r *http.Request){
 		name = "unknown"
 	}
 	fmt.Fprintf(w, "Hello %s!!\n", name)
+	fmt.Fprintf(w, "help:")
 	fmt.Fprintf(w, "use /?name=name to display your name!")
 }
 
