@@ -11,7 +11,11 @@ func add(a, b int) int {
 }
 
 func handler(w http.ResponseWriter, r *http.Request){
-	fmt.Fprintf(w, "Hello %d!!\n", add(2, 3))
+	name := r.FormValue("name")
+	if name == "" {
+		name = "unknown"
+	}
+	fmt.Fprintf(w, "Hello %s!!\n", name)
 }
 
 func main(){
