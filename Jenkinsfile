@@ -1,5 +1,5 @@
 pipeline {
-	agent { docker { image 'golang:1.24.5-bookworm' } }
+	agent { dockerfile true }
 	stages {
 		stage('build'){
 			steps {
